@@ -1,29 +1,35 @@
- return {
+return {
     {
         "williamboman/mason.nvim",
         config = function()
             require("mason").setup()
-        end
+        end,
     },
     {
         "williamboman/mason-lspconfig.nvim",
         lazy = false,
         opts = {
-            auto_install = true
-        }
+            auto_install = true,
+        },
     },
     {
         "neovim/nvim-lspconfig",
         config = function()
-            local capabilities = require('cmp_nvim_lsp').default_capabilities()
+            vim.fn.sign_define("DiagnosticSignError", { text = "󰅚", texthl = "DiagnosticSignError" })
+            vim.fn.sign_define("DiagnosticSignWarn", { text = "󰀪", texthl = "DiagnosticSignWarn" })
+            vim.fn.sign_define("DiagnosticSignInfo", { text = "", texthl = "DiagnosticSignInfo" })
+            vim.fn.sign_define("DiagnosticSignHint", { text = "", texthl = "DiagnosticSignHint" })
 
-            local lspconfig = require('lspconfig')
-            lspconfig.lua_ls.setup({capabilities = capabilities})
-            lspconfig.tsserver.setup({capabilities = capabilities})
+            local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-            vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
-            vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
-            vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, {})
-        end
-    }
+            local lspconfig = require("lspconfig")
+            lspconfig.lua_ls.setup({ capabilities = capabilities })
+            lspconfig.tsserver.setup({ capabilities = capabilities })
+            lspconfig.pylsp.setup({ capabilities = capabilities })
+
+            vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+            vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
+            vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
+        end,
+    },
 }

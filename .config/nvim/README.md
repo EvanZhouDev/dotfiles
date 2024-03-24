@@ -2,7 +2,7 @@
 
 
 
-| Start Screen | Code |
+| Start Screen | Code&nbsp;&nbsp;&nbsp; |
 |--------------|------|
 | ![Start Screen](./art/startscreen.png) | ![Code](./art/code.png) |
 

@@ -4,6 +4,7 @@ alias gp='git push'
 alias gsw='git switch'
 alias ll='ls -lh'
 alias py="python3"
+alias cd="z"
 
 unset zle_bracketed_paste
 
@@ -20,3 +21,4 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+eval "$(zoxide init zsh)"

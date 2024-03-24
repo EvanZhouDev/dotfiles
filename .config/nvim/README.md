@@ -1,6 +1,11 @@
 # `nvim` Configuration
 
-![Start Screen](./art/startscreen.png){: style="width:49%"} ![Code](./art/code.png){: style="width:49%"}
+
+
+| Start Screen | Code |
+|--------------|------|
+| ![Start Screen](./art/startscreen.png) | ![Code](./art/code.png) |
+
 
 When I migrated to `nvim`, I had 3 goals in mind: Speed, simplicity, and elegance.
 
